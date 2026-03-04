@@ -1,12 +1,11 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import salaryImg from "./projects/salary.png";
 import TodoImg from "./projects/todolist.png";
 import TwitterImg from "./projects/twitter.png";
 import jurereImg from "./projects/jurere.png";
-import loginImg from "./projects/login.png"
-import velhaImg from  "./projects/Jogo-da-velha.png"
-import { StaticImageData } from "next/image";
+import loginImg from "./projects/login.png";
+import velhaImg from "./projects/Jogo-da-velha.png";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  To add a custom screenshot for a project:
