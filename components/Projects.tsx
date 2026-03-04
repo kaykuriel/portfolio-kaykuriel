@@ -6,6 +6,7 @@ import TwitterImg from "./projects/twitter.png";
 import jurereImg from "./projects/jurere.png";
 import loginImg from "./projects/login.png"
 import velhaImg from  "./projects/Jogo-da-velha.png"
+import { StaticImageData } from "next/image";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  To add a custom screenshot for a project:
@@ -22,8 +23,8 @@ type Project = {
   lang: string;
   github: string;
   live?: string;
-  image?: any;
-  ghRepo: string; // used for the GitHub OG preview image
+  image?: string | StaticImageData;
+  ghRepo: string;
 };
 
 const projects: Project[] = [
