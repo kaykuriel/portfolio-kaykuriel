@@ -1,11 +1,5 @@
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
-import salaryImg from "./projects/salary.png";
-import TodoImg from "./projects/todolist.png";
-import TwitterImg from "./projects/twitter.png";
-import jurereImg from "./projects/jurere.png";
-import loginImg from "./projects/login.png";
-import velhaImg from "./projects/Jogo-da-velha.png";
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  To add a custom screenshot for a project:
@@ -22,7 +16,7 @@ type Project = {
   lang: string;
   github: string;
   live?: string;
-  image?: string | StaticImageData;
+  image?: string;
   ghRepo: string;
 };
 
@@ -35,7 +29,7 @@ const projects: Project[] = [
     github: "https://github.com/kaykuriel/Salary-Manger",
     live: "https://salary-manger-szxj.vercel.app",
     ghRepo: "Salary-Manger",
-    image: salaryImg,
+    image: "/projects/salary.png",
   },
   {
     title: "To-Do List",
@@ -45,7 +39,7 @@ const projects: Project[] = [
     github: "https://github.com/kaykuriel/to-do-list",
     live: "https://to-do-list-ten-zeta-96.vercel.app",
     ghRepo: "to-do-list",
-    image: TodoImg,
+    image: "/projects/todolist.png",
   },
   {
     title: "Twitter Clone",
@@ -55,8 +49,7 @@ const projects: Project[] = [
     github: "https://kaykuriel.github.io/twitter_clone/",
     live: "https://kaykuriel.github.io/twitter_clone",
     ghRepo: "twitter_clone",
-    image: TwitterImg
-
+    image: "/projects/twitter.png",
   },
   {
     title: "Tic-Tac-Toe",
@@ -66,7 +59,7 @@ const projects: Project[] = [
     github: "https://github.com/kaykuriel/JogoDaVelha",
     live: "https://kaykuriel.github.io/JogoDaVelha/",
     ghRepo: "JogoDaVelha",
-    image: velhaImg
+    image: "/projects/Jogo-da-velha.png",
   },
   {
     title: "Prainha Jurere",
@@ -76,7 +69,7 @@ const projects: Project[] = [
     github: "https://github.com/kaykuriel/PrainhaJurere",
     live: "https://prainhajurere.com.br/",
     ghRepo: "PrainhaJurere",
-    image: jurereImg
+    image: "/projects/jurere.png",
   },
   {
     title: "Login UI",
@@ -86,7 +79,7 @@ const projects: Project[] = [
     github: "https://github.com/kaykuriel/login",
     live: "https://kaykuriel.github.io/login/",
     ghRepo: "login",
-    image: loginImg
+    image: "/projects/login.png",
   },
 ];
 
@@ -116,7 +109,6 @@ function GithubIcon() {
 }
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  // Use custom image if provided, otherwise fall back to GitHub's OG preview
   const imgSrc =
     project.image ||
     `https://opengraph.githubassets.com/1/kaykuriel/${project.ghRepo}`;
