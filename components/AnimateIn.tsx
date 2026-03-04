@@ -43,12 +43,10 @@ export default function AnimateIn({
     <div
       ref={ref}
       style={{
-        transitionDelay: `${delay}ms`,
-        transitionDuration: "650ms",
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : initialTransform,
-        transition: "opacity 650ms cubic-bezier(0.16,1,0.3,1), transform 650ms cubic-bezier(0.16,1,0.3,1)",
+        transition: `opacity 650ms cubic-bezier(0.16,1,0.3,1) ${delay}ms, transform 650ms cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
+        willChange: visible ? "auto" : "transform, opacity",
       }}
       className={className}
     >
