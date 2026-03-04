@@ -4,7 +4,8 @@
       "WebFetch(domain:api.github.com)",
       "Bash(npm run:*)",
       "Bash(curl:*)",
-      "Bash(npx kill-port:*)"
+      "Bash(npx kill-port:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
