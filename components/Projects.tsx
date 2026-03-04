@@ -84,7 +84,7 @@ const projects: Project[] = [
     tags: ["CSS", "HTML", "JavaScript"],
     lang: "CSS",
     github: "https://github.com/kaykuriel/login",
-    live: "https://https://kaykuriel.github.io/login/",
+    live: "https://kaykuriel.github.io/login/",
     ghRepo: "login",
     image: loginImg
   },
