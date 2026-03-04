@@ -22,7 +22,7 @@ type Project = {
   lang: string;
   github: string;
   live?: string;
-  image?: string;
+  image?: any;
   ghRepo: string; // used for the GitHub OG preview image
 };
 
