@@ -29,7 +29,7 @@ components/
   AnimateIn.tsx   # "use client" — Intersection Observer fade-in-up wrapper, accepts delay + from direction
   Nav.tsx         # "use client" — sticky nav with scroll-aware blur backdrop
   Hero.tsx        # Full-viewport hero: animated badge, name, role chips, bio, CTAs
-  Projects.tsx    # Project grid with image/gradient placeholders — all project data at top of file
+  Projects.tsx    # Project grid with GitHub OG image fallback — all project data at top of file
   Footer.tsx      # Contact section with email, WhatsApp, LinkedIn, GitHub + copyright bar
 ```
 
@@ -42,12 +42,15 @@ All project data is in `components/Projects.tsx` in the `projects` array at the 
   title: string
   description: string
   tags: string[]
-  lang: string       // "TypeScript" | "JavaScript" | "CSS" | "HTML" — drives placeholder gradient color
-  github: string
+  lang: string       // "TypeScript" | "JavaScript" | "CSS" | "HTML" — drives lang dot color
+  github: string     // full URL to GitHub repo or GitHub Pages site
+  ghRepo: string     // repo name only (e.g. "to-do-list") — used for GitHub OG image fallback
   live?: string      // deploy URL, omit if none
   image?: string     // "/projects/filename.png" — drop file in public/projects/ first
 }
 ```
+
+If `image` is omitted, the card automatically falls back to `https://opengraph.githubassets.com/1/kaykuriel/<ghRepo>`.
 
 ## Adding project screenshots
 

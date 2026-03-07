@@ -22,6 +22,26 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "BONTEN Enterprises",
+    description: "my tech company's website",
+    tags: ["tailwindcss", "TypeScript", "Next.js", "Vercel"],
+    lang: "TypeScript",
+    github: "https://github.com/kaykuriel/bonten",
+    live: "https://bonten-silk.vercel.app/",
+    ghRepo: "Bonten",
+    image: "/projects/Bonten.png",
+  },
+  {
+    title: "Prainha Jurere",
+    description: "Institutional landing page for Prainha Jurere with a modern responsive layout.",
+    tags: ["CSS", "HTML"],
+    lang: "CSS",
+    github: "https://github.com/kaykuriel/PrainhaJurere",
+    live: "https://prainhajurere.com.br/",
+    ghRepo: "PrainhaJurere",
+    image: "/projects/jurere.png",
+  },
+  {
     title: "Salary Manager",
     description: "Salary management app with a modern interface and data persistence.",
     tags: ["TypeScript", "Next.js", "Vercel"],
@@ -51,27 +71,7 @@ const projects: Project[] = [
     ghRepo: "twitter_clone",
     image: "/projects/twitter.png",
   },
-  {
-    title: "Tic-Tac-Toe",
-    description: "Tic-tac-toe game with win detection, draw handling, turn alternation, and restart.",
-    tags: ["JavaScript", "CSS"],
-    lang: "JavaScript",
-    github: "https://github.com/kaykuriel/JogoDaVelha",
-    live: "https://kaykuriel.github.io/JogoDaVelha/",
-    ghRepo: "JogoDaVelha",
-    image: "/projects/Jogo-da-velha.png",
-  },
-  {
-    title: "Prainha Jurere",
-    description: "Institutional landing page for Prainha Jurere with a modern responsive layout.",
-    tags: ["CSS", "HTML"],
-    lang: "CSS",
-    github: "https://github.com/kaykuriel/PrainhaJurere",
-    live: "https://prainhajurere.com.br/",
-    ghRepo: "PrainhaJurere",
-    image: "/projects/jurere.png",
-  },
-  {
+   {
     title: "Login UI",
     description: "Login screen with responsive design, form validation, and entrance micro-animations.",
     tags: ["CSS", "HTML", "JavaScript"],
@@ -118,7 +118,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <article className="project-card group flex flex-col rounded-xl border border-white/[0.07] hover:border-white/[0.14] bg-[#070707] hover:bg-[#0a0a0a] transition-all duration-300 overflow-hidden h-full">
 
         {/* Preview image */}
-        <div className="relative w-full h-40 overflow-hidden bg-[#0d0d0d] shrink-0">
+        <a
+          href={project.live ?? project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative w-full h-40 overflow-hidden bg-[#0d0d0d] shrink-0 block"
+        >
           <Image
             src={imgSrc}
             alt={`${project.title} preview`}
@@ -128,7 +133,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           />
           {/* Bottom gradient so the card border reads cleanly */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#070707] via-transparent to-transparent opacity-60" />
-        </div>
+        </a>
 
         {/* Content */}
         <div className="flex flex-col flex-1 p-5">
